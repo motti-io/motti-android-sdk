@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.M)
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
-
             case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS: {
                 Map<String, Integer> perms = new HashMap<String, Integer>();
 
@@ -48,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
                     perms.put(permissions[i], grantResults[i]);
                 }
 
-                if (perms.get(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && perms.get(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                if (perms.get(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
 
                     xMotti.initialize(API_KEY,this, null);
                     xMotti.start();
+                    xMotti.initializeService(getApplicationContext(), R.drawable.ic_notification);
 
                 } else {
+                    // Permission Denied
                     Toast.makeText(this, mx.xmotti.xmotti.R.string.permission_denied_message, Toast.LENGTH_SHORT).show();
                 }
             }
