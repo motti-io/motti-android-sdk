@@ -21,7 +21,10 @@ repositories {
 
 Add the Motti SDK to your app module's dependencies in Android Studio by adding the following line to your top-level `build.gradle`.
 ```
-implementation 'mx.xmotti.xmotti:xmotti:1.1.15'
+implementation 'mx.xmotti.xmotti:xmotti:2.1.6'
+implementation 'org.altbeacon:android-beacon-library:2.15.2'
+implementation 'com.google.android.gms:play-services-location:16.0.0'
+implementation 'com.google.android.gms:play-services-maps:16.0.0'
 ```
 
 ## Configuration
