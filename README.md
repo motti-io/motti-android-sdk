@@ -71,9 +71,6 @@ Include the custom  `Application`  class in your `AndroidManifest.xml`
 ```
 
 
- `NSLocationAlwaysAndWhenInUseUsageDescription` `NSLocationAlwaysUsageDescription` `NSLocationWhenInUseUsageDescription` in your `Info.plist`.
-- Enable the `location` background mode.
-
 ## Usage
 
 Include the following code at your first loaded `Activity` class.
